@@ -21,11 +21,11 @@ jobs:
         dotnet-version: 3.1.101
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
-    - name: Delete timestamp from csgo.cs(hazedumper)
-      working-directory: ./AnimeSoftware/Offsets/hazedumper
-      run: |
-            ((Get-Content csgo.cs -Raw) -replace 'public const Int32 timestamp','//public const Int32 timestamp') | Set-Content csgo.cs
-      shell: pwsh
+    #- name: Delete timestamp from csgo.cs(hazedumper)
+    #  working-directory: ./AnimeSoftware/Offsets/hazedumper
+    #  run: |
+    #        ((Get-Content csgo.cs -Raw) -replace 'public const Int32 timestamp','//public const Int32 timestamp') | Set-Content csgo.cs
+    #  shell: pwsh
     - name: Build AnimeSoftware
       working-directory: ./AnimeSoftware
       run: msbuild AnimeSoftware.csproj /p:Configuration=Release /p:VisualStudioVersion=16.0
