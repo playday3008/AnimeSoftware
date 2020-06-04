@@ -45,6 +45,7 @@ namespace AnimeSoftware
 
         public static bool OpenProcess(string name)
         {
+            
             try
             {
                 process = Process.GetProcessesByName(name)[0];
@@ -78,7 +79,7 @@ namespace AnimeSoftware
             {
                 foreach (ProcessModule module in process.Modules)
                 {
-                    if (module.ModuleName == "client_panorama.dll")
+                    if (module.ModuleName == "client.dll")
                     {
                         Client = (Int32)module.BaseAddress;
                         ClientSize = (Int32)module.ModuleMemorySize;
