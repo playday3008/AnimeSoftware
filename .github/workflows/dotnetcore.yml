@@ -18,9 +18,9 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.101
-    - name: Setup MSBuild.exe
-      uses: warrenbuckley/Setup-MSBuild@v1
+        dotnet-version: 3.1.x
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
     #- name: Delete timestamp from csgo.cs(hazedumper)
     #  working-directory: ./AnimeSoftware/Offsets/hazedumper
     #  run: |
